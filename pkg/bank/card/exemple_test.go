@@ -7,20 +7,39 @@ import (
 
 
 func ExempleTotal() {
-	cards := []types.Card{
+	fmt.Println(Total( []types.Card{
+		{
+			Balance: 1_000_00,
+			Active: true,
+ 		},
+	}))
+	fmt.Println(Total( []types.Card{
 	{
-		Balance: 10_000_00,
-		Active: true,
- 	},
-	{
-		Balance: 10_000_00,
-		Active: true,
-	},
-	{
-		Balance: 10_000_00,
+		Balance: 1_000_00,
 		Active: true,
 	},
-  }
-   fmt.Println(Total(cards))
-   //Output: 2000000
+	{
+		Balance: 2_000_00,
+		Active: true,
+	},
+}))
+fmt.Println(Total( []types.Card{
+	{
+		Balance: 1_000_00,
+		Active: false,
+	},
+}))
+
+	fmt.Println(Total( []types.Card{
+		{
+			Balance: -1_000_00,
+			Active: true,
+		},
+	}))
+	
+   //Output: 
+   //100000
+   //300000
+   //0
+   //0
 }
